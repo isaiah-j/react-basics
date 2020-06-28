@@ -10,26 +10,24 @@ class App extends Component{
   constructor(){
     super();
     this.state = {
-      string: "Isaiah"
+      characters: [
+        {name: "Aang", id: 1},
+        {name: "Katara", id: 2},
+        {name: "Sokka" ,id: 3},
+        {name: "Zuko", id: 4},
+
+      ]
     }
   }
   render(){
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1>This is my sexy h1</h1>
-          <p onClick={() => this.setState({string: "Daniel"})}>
-            Hello, my name is {add()}
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          {this.state.characters.map(el => {
+            return <h1 key={el.id}>{el.name}</h1>
+          })}
+
+     
         </header>
       </div>
     );
