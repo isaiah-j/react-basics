@@ -16,9 +16,8 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		fetch('https://swapi.dev/api/people/')
-			.then((res) => res.json())
-			.then((data) => this.setState({ characters: data.results }));
+		fetch("https://last-airbender-api.herokuapp.com/api/v1/characters?perPage=497").then(res => res.json()).then(data => this.setState({characters: data}))
+			
 	}
 
 	render() {
