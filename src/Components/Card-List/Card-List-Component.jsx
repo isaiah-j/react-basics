@@ -7,7 +7,7 @@ export const CardList = (props) => {
 	return (
 		<div className="card-list">
 			{props.characters.map((el) => {
-				return <Card character={el} ></Card>;
+				return <Card character={el} key={el._id}></Card>;
 			})}
 		</div>
 	);
